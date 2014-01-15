@@ -253,5 +253,7 @@ $('.prezento-holder').prezento.changeDevice('imac');</code>
         </tr>
     </tbody>
 </table> 
-<h2 id="chap5">Copyright and License</h2>
+<h2>Support</h2>
+<p>To do</p>
+<h2>Copyright and License</h2>
 <p>Copyright &copy; <?php echo date("Y"); ?> Ivaldi (<a href="http://ivaldi.nl">http://ivaldi.nl</a>)<br/>Prezento is licensed under the GNU Affero General Public License Version 3.</p>

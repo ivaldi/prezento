@@ -225,7 +225,7 @@
 			$(document).on("ready", beforeInit);
 			$(window).on("load", init);
 		}else{
-			parentElem.append('<p class="pserror">You haven\'t defined any devices. Please read <a href="#">the instructions</a> on how to do this. At least one device is needed for this plugin to work.</p>')
+			parentElem.append('<p class="pserror">You haven\'t defined any devices. Please read <a href="https://github.com/ivaldi/prezento/blob/master/README.md">the instructions</a> on how to do this. At least one device is needed for this plugin to work.</p>')
 		}
 
 		// Extend plugin with new functions

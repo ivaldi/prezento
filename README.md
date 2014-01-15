@@ -253,7 +253,30 @@ $('.prezento-holder').prezento.changeDevice('imac');</code>
         </tr>
     </tbody>
 </table> 
-<h2>Support</h2>
-<p>To do</p>
+
+
+<h2>Browser Support</h2>
+<table>
+    <tbody>
+        <tr>
+            <td><img src="https://raw.github.com/alrra/browser-logos/master/chrome/chrome_48x48.png" alt="Chrome"/></td>
+            <td><img src="https://raw.github.com/alrra/browser-logos/master/firefox/firefox_48x48.png" alt="Firefox"/></td>
+            <td><img src="https://raw.github.com/alrra/browser-logos/master/safari/safari_48x48.png" alt="Safari"/></td>
+            <td><img src="https://raw.github.com/alrra/browser-logos/master/opera/opera_48x48.png" alt="Opera"/></td>
+            <td><img src="https://raw.github.com/alrra/browser-logos/master/internet-explorer-tile/internet-explorer-tile_48x48.png" alt="IE"/></td>
+            <td><img src="https://raw.github.com/alrra/browser-logos/master/safari-ios/safari-ios_48x48.png" alt="iOS"/></td>
+        </tr>
+        <tr>
+            <td>&#x2713;</td>
+            <td>&#x2713; 5+</td>
+            <td>&#x2713; 4+</td>
+            <td>&#x2713; 12+</td>
+            <td>&#x2713; 10+</td>
+            <td>&#x2713;</td>
+        </tr>
+    </tbody>
+</table>
+
+
 <h2>Copyright and License</h2>
 <p>Copyright &copy; <?php echo date("Y"); ?> Ivaldi (<a href="http://ivaldi.nl">http://ivaldi.nl</a>)<br/>Prezento is licensed under the GNU Affero General Public License Version 3.</p>

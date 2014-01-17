@@ -46,17 +46,20 @@
 
             <div class="row">
                 <div class="large-7 columns large-offset-1">
-                    <h3><strong>Scroll</strong></h3>
-                    <h2 class="pbxxl mbxxl"><small>Start the animation when the device enters the viewport. You define the distance between the top of the browser and your plugin holder and as soon as the distance is smaller than the given value, the animation will start. </small></h2>
-                    <div class="mtxxl ptxxl mbxxl pbxxl">
-                        <h3 class="mtxxl ptxxl mbxxl pbxxl"><small>... space intentionally left blank to push the device outside the viewport ...</small></h3>
-                    </div>
+                    <h3><strong>Button control</strong></h3>
+                    <h2><small>Start the animation after the play button is pressed. When an animation is playing you can pause it and resume it afterwards. When the animation has ended you get the option to reset the animation and do it all over again.</small></h2>
                 </div>
             </div>
 
             <div class="row ptxxl">
                 <div class="large-12">
                     <div class="prezento-holder"></div>
+                    <p class="text-center">
+                      <a class="btn-play btn">Play</a>
+                        <a class="btn-pause btn">Pause</a>
+                        <a class="btn-resume btn">Resume</a>
+                        <a class="btn-reset btn">Reset</a>
+                    </p>
                 </div>
             </div>
         </div>
@@ -110,9 +113,20 @@
         breakpoint: 0,
         bgImgSrc : './../images/web-design-small.jpg',
         bgTransitionDuration: '4s'
-      }],
-      startAfterScroll: true,
-      distanceTop: 0.5
+      }],autoPlay: false
+    });
+
+    jQuery('.btn-play').on('click', this, function(){
+        jQuery('.prezento-holder').prezento.play();
+    });
+    jQuery('.btn-pause').on('click', this, function(){
+        jQuery('.prezento-holder').prezento.pause();
+    });
+    jQuery('.btn-resume').on('click', this, function(){
+        jQuery('.prezento-holder').prezento.resume();
+    });
+    jQuery('.btn-reset').on('click', this, function(){
+        jQuery('.prezento-holder').prezento.reset();
     });
 &lt;/script></code>
                 </pre>
@@ -202,8 +216,22 @@
             bgImgSrc : './../images/web-design-small.jpg',
             bgTransitionDuration: '4s'
           }],
-          startAfterScroll: true,
-          distanceTop: 0.5
+            autoPlay: false
+        });
+        jQuery('.btn').on('click', function(e){
+            e.preventDefault();
+        })
+        jQuery('.btn-play').on('click', this, function(){
+            jQuery('.prezento-holder').prezento.play();
+        });
+        jQuery('.btn-pause').on('click', this, function(){
+            jQuery('.prezento-holder').prezento.pause();
+        });
+        jQuery('.btn-resume').on('click', this, function(){
+            jQuery('.prezento-holder').prezento.resume();
+        });
+        jQuery('.btn-reset').on('click', this, function(){
+            jQuery('.prezento-holder').prezento.reset();
         });
     </script>
   </body>

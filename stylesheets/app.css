@@ -67,6 +67,30 @@ table {
 	overflow-x: scroll;
 }
 
+.btn{
+	padding: 10px 15px;
+	text-align: center;
+	color: #fff;
+	text-transform: uppercase;
+	border-radius: 3px;
+	background-color: #229bec;
+	box-shadow: 0 3px 0 #0a6bad;
+	text-decoration: none;
+	font-size: 12px;
+	position: relative;
+	font-weight: bold;
+}
+
+.btn:hover{
+	background-color: #1d94e4;
+	color: #fff;
+}
+
+.btn:active {
+	box-shadow: none;
+	top: 3px;
+}
+
 .fa-spinner{
 	color: #6f6f6f;
 }

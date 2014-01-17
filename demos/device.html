@@ -46,17 +46,20 @@
 
             <div class="row">
                 <div class="large-7 columns large-offset-1">
-                    <h3><strong>Scroll</strong></h3>
-                    <h2 class="pbxxl mbxxl"><small>Start the animation when the device enters the viewport. You define the distance between the top of the browser and your plugin holder and as soon as the distance is smaller than the given value, the animation will start. </small></h2>
-                    <div class="mtxxl ptxxl mbxxl pbxxl">
-                        <h3 class="mtxxl ptxxl mbxxl pbxxl"><small>... space intentionally left blank to push the device outside the viewport ...</small></h3>
-                    </div>
+                    <h3><strong>Manually change the device</strong></h3>
+                    <h2><small>Normally, each device is shown when your screen is larger than the given breakpoint. With the changeDevice function you can manually override the shown device. Handy for when you don't want a resize event to be triggered, but still want to be able to show all screensizes.</small></h2>
                 </div>
             </div>
 
             <div class="row ptxxl">
                 <div class="large-12">
                     <div class="prezento-holder"></div>
+                    <p class="text-center">
+                      <a class="btn-imac btn">iMac</a>
+                        <a class="btn-mbp btn">MacBook Pro</a>
+                        <a class="btn-ipad btn">iPad</a>
+                        <a class="btn-iphone btn">iPhone</a>
+                    </p>
                 </div>
             </div>
         </div>
@@ -111,8 +114,20 @@
         bgImgSrc : './../images/web-design-small.jpg',
         bgTransitionDuration: '4s'
       }],
-      startAfterScroll: true,
-      distanceTop: 0.5
+        responsive: 'none'
+    });
+
+    jQuery('.btn-imac').on('click', function(){
+        jQuery('.prezento-holder').prezento.changeDevice('imac');
+    })
+    jQuery('.btn-mbp').on('click', function(){
+        jQuery('.prezento-holder').prezento.changeDevice('macbookpro');
+    })
+    jQuery('.btn-ipad').on('click', function(){
+        jQuery('.prezento-holder').prezento.changeDevice('ipad');
+    })
+    jQuery('.btn-iphone').on('click', function(){
+        jQuery('.prezento-holder').prezento.changeDevice('iphone');
     });
 &lt;/script></code>
                 </pre>
@@ -202,8 +217,22 @@
             bgImgSrc : './../images/web-design-small.jpg',
             bgTransitionDuration: '4s'
           }],
-          startAfterScroll: true,
-          distanceTop: 0.5
+            responsive: 'none'
+        });
+        jQuery('.btn').on('click', function(e){
+            e.preventDefault();
+        })
+        jQuery('.btn-imac').on('click', function(){
+            jQuery('.prezento-holder').prezento.changeDevice('imac');
+        })
+        jQuery('.btn-mbp').on('click', function(){
+            jQuery('.prezento-holder').prezento.changeDevice('macbookpro');
+        })
+        jQuery('.btn-ipad').on('click', function(){
+            jQuery('.prezento-holder').prezento.changeDevice('ipad');
+        })
+        jQuery('.btn-iphone').on('click', function(){
+            jQuery('.prezento-holder').prezento.changeDevice('iphone');
         });
     </script>
   </body>

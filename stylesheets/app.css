@@ -230,7 +230,7 @@ table {
 	z-index: 20;
 }
 
-@media only screen and (min-width: 40.063em){
+@media only screen and (max-width: 40.063em){
 	table{
 		display: block;
 	}

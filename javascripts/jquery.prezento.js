@@ -27,7 +27,6 @@
 			currentPlayState;
 
 		// Set value for distanceTop, depends if the user entered a float or string
-
 		config.distanceTop = (typeof(config.distanceTop) === 'string') ? parseFloat(config.distanceTop)/100 : config.distanceTop;
 
 		// Create layout
@@ -174,38 +173,41 @@
 				deviceHolder = '.' + config.deviceHolder,
 				deviceScreen = '.' + config.deviceScreen,
 				imageWidth = dummyImage.naturalWidth,
-				imageHeight = dummyImage.naturalHeight;
+				imageHeight = dummyImage.naturalHeight,deviceWidth;
 
 			$(deviceHolder).html($(dummyImage).clone());
 
-		    var deviceWidth = $(deviceHolder).find('img').width(),
-		    	deviceHeight = $(deviceHolder).find('img').height(),
-	    		screenWidth = device.xRightBottom - device.xLeftTop,
-	    		screenHeight = device.yRightBottom - device.yLeftTop,
-	    		wRatio = screenWidth / imageWidth,
-	    		hRatio = screenHeight / imageHeight,
-	    		lRatio = device.xLeftTop / imageWidth,
-	    		tRatio = device.yLeftTop / imageHeight;
 
-		    // Add some basic styling
-		    $(deviceHolder).css({
-		    	'position' : 'relative',
-		    	'z-index' : 3
-		    });
+			$(deviceHolder).find('img').load(function(){
+			    var deviceWidth = $(this).width(),
+			    	deviceHeight = $(this).height(),
+		    		screenWidth = device.xRightBottom - device.xLeftTop,
+		    		screenHeight = device.yRightBottom - device.yLeftTop,
+		    		wRatio = screenWidth / imageWidth,
+		    		hRatio = screenHeight / imageHeight,
+		    		lRatio = device.xLeftTop / imageWidth,
+		    		tRatio = device.yLeftTop / imageHeight;
 
-		    $(deviceScreen).css({
-		    	'position' : 'absolute',
-		    	'z-index' : 2,
-		        'width' : Math.ceil(deviceWidth * wRatio),
-		        'height': Math.ceil(deviceHeight * hRatio),
-		        'left' : Math.round(deviceWidth * lRatio),
-		        'top' : Math.round(deviceHeight * tRatio),
-		        'background-size' : '100%',
-		        'background-image' : 'url('+device.bgImgSrc+')',
-		        'background-position' : '0% 0%'
-			});
+			    // Add some basic styling
+			    $(deviceHolder).css({
+			    	'position' : 'relative',
+			    	'z-index' : 3
+			    });
 
+			    $(deviceScreen).css({
+			    	'position' : 'absolute',
+			    	'z-index' : 2,
+			        'width' : Math.ceil(deviceWidth * wRatio),
+			        'height': Math.ceil(deviceHeight * hRatio),
+			        'left' : Math.round(deviceWidth * lRatio),
+			        'top' : Math.round(deviceHeight * tRatio),
+			        'background-size' : '100%',
+			        'background-image' : 'url('+device.bgImgSrc+')',
+			        'background-position' : '0% 0%'
+				});
 		    
+		    });
+			    
 		    // Extra options based on config
 		    if(!config.startAfterScroll && config.autoPlay){
 		    	animAction(selectedDevice, 'play');
@@ -228,6 +230,36 @@
 		}else{
 			parentElem.append('<p class="pserror">You haven\'t defined any devices. Please read <a href="https://github.com/ivaldi/prezento/blob/master/README.md">the instructions</a> on how to do this. At least one device is needed for this plugin to work.</p>')
 		}
+
+		// todo IE 8 & 9 support via jQuery.support.transition
+		// function cssTransitions() {
+		//     m = document.createElement('z');
+		//     s = m.style;
+		//     function test_props( p ) {
+		//         for ( var i in p ) {
+		//             if ( s[ p[i] ] ) {
+		//                 return true;
+		//             }
+		//         }
+		//         return false;
+		//     }
+		//     function test_props_all( prop ) {
+		//         d = 'Webkit Moz O ms Khtml'.split(' ');
+		//         var u = prop.charAt(0).toUpperCase() + prop.substr(1);
+		//         e = (prop + ' ' + d.join(u + ' ') + u).split(' ');
+		//         return test_props( e );
+		//     }
+		//     return test_props_all( 'animationName' );
+		// }
+		// if ( !cssTransitions() ) {
+		//     // Browser doesn't support CSS Transitions
+		//     // Let's fall back to jQuery instead
+		//     $('.animate a').hover(function() {
+		//         $(this).css({opacity:0.75}).fadeTo(300, 0.5);
+		//     }, function() {
+		//         $(this).css({opacity:1}).fadeTo(300, 0.75);
+		//     });
+		// }
 
 		// Extend plugin with new functions
 		$.extend($.fn.prezento, {

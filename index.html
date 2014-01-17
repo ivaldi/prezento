@@ -1,1 +1,453 @@
-Hello World!
+<!DOCTYPE html>
+<!--[if IE 8]>    <html class="no-js lt-ie9" lang="en"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en"> <!--<![endif]-->
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+    <title>Prezento, a jQuery plugin to showcase your web designs.</title>
+    <link rel="stylesheet" href="stylesheets/foundation.min.css">
+    <link rel="stylesheet" href="stylesheets/font-awesome.min.css">
+    <link rel="stylesheet" href="stylesheets/app.css">
+    <link rel="stylesheet" href="stylesheets/jquery.prezento.min.css">
+    <link href="favicon.png" rel="shortcut icon" type="image/vnd.microsoft.icon" />
+    <script src="javascripts/modernizr.foundation.js"></script>
+  </head>
+  <body>
+    <nav class="top-bar" data-topbar="">
+        <div class="row">
+            <ul class="title-area">
+                <li class="name">
+                    <h1><a href="#">Prezento</a></h1>
+                </li>
+            </ul>
+            <section class="top-bar-section">
+                <ul class="right">
+                    <li><a href="https://github.com/ivaldi/prezento/fork" target="_blank"><i class="fa fa-github-alt mrs"></i>Fork us on github</a></li>
+                    <li><a href="https://github.com/ivaldi/prezento/archive/master.zip" target="_blank"><i class="fa fa-cloud-download mrs"></i>Download</a></li>
+                </ul>
+
+                <ul class="left">
+                    <li><a href="#instructions"><i class="fa fa-lightbulb-o mrs"></i>Instructions</a></li>
+                    <li class="has-dropdown not-click">
+                        <a href="#"><i class="fa fa-eye mrs"></i> Demos</a>
+                        <ul class="dropdown"><li class="title back js-generated"><h5><a href="javascript:void(0)">Back</a></h5></li>
+                          <li><a href="#">Default</a></li>
+                          <li><a href="#">Scroll</a></li>
+                          <li><a href="#">Buttons</a></li>
+                          <li><a href="#">Change Device</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </section>
+        </div>
+    </nav>
+    <div class="panel">
+        <div class="ptxxl">
+            <div class="row">
+                <div class="large-7 columns large-offset-1">
+                    <h3><strong>Prezento, a jQuery plugin to showcase your web designs</strong></h3>
+                    <h2><small>Show off your responsive web designs. Include the plugin, apply the settings and you're ready to impress your visitors!</small></h2>
+                </div>
+                <div class="large-4 columns text-center ptxl mtxl">
+                    <a href="https://github.com/ivaldi/prezento/archive/master.zip" target="_blank" class="button large radius download mtxxl"><i class="fa fa-cloud-download mrs"></i>Download</a>
+                </div>
+            </div>
+            <div class="row ptxxl">
+                <div class="large-12">
+                    <div class="prezento-holder"></div>
+                </div>
+            </div>
+            <div class="row ptxxl pbl">
+                <div class="large-8 columns">
+                    <p class="text-center text-small ptl"><strong class="mrs">Latest update on Github:</strong> <span id="rssupdates"></span></p>
+                </div>
+                <div class="large-4 columns">
+                    <a href="https://github.com/ivaldi/prezento" class="button small secondary right radius"><i class="fa fa-bolt mrs"></i>Contribute</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row mtxxl ptxxl pbxxl text-center">
+        <div class="large-4 columns">
+            <div class="panel round text-center">
+                <i class="fa fa-mobile fa-5x subheader"></i>
+            </div>
+            <h4>Mobile First</h4>
+            <p>Show your designs on mobiles, tablets, laptops, tvs, or any other device you like. You control the breakpoints.</p>
+        </div>
+        <div class="large-4 columns">
+            <div class="panel round text-center">
+                <i class="fa fa-code fa-5x subheader"></i>
+            </div>
+            <h4>CSS Animations</h4>
+            <p>Instead of letting your users scroll, Prezento does the scrolling for you. Using CSS Animations your design will scroll from top to bottom.</p>
+        </div>
+        <div class="large-4 columns">
+            <div class="panel round text-center">
+                <i class="fa fa-cog fa-5x subheader"></i>
+            </div>
+            <h4>Fully Adaptable</h4>
+            <p>You decide what you want to showcase, which devices you want to use, how fast the animation per device should go,...</p>
+        </div>
+    </div>
+
+
+    <div class="row ptxxl pbxxl text-center">
+        <div class="large-10 columns large-centered">
+            <hr/>
+        </div>
+    </div>
+
+    <div id="instructions" class="ptxxl pbxxl">
+        <div class="row pbxxl">
+            <div class="large-12 columns">
+                <h2>Getting Started</h2>
+                <p>With prezento you can show your web designs in a new, interactive way. Show your visitors that you've created a responsive design, choose the device the design should be showcased on and you're set. Here is how:</p>
+
+                <pre>
+                    <code>
+&lt;!-- include jQuery -->
+&lt;script src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.js">&lt;/script>
+
+&lt;!-- include prezento -->
+&lt;script src="http://path/to/your/copy/of/jquery.prezento.js">&lt;/script>
+
+&lt;script>
+    $('.prezento-holder').prezento({
+        //see below for settings
+    });
+&lt;/script>
+
+...
+
+&lt;!-- declare a prezento placeholder-->
+&lt;div class="prezento-holder">&lt;/div></code>
+                </pre>
+            </div>
+        </div>
+
+
+        <div class="row ptxxl pbxxl">
+            <div class="large-12 columns">
+                <h2>Usage</h2>
+
+                <p>You need to declare at least one device in your plugin settings, if you forget to do so you will see this:</p>
+                <p class="pserror clearfix">You haven't defined any devices. Please read <a href="https://github.com/ivaldi/prezento/blob/master/README.md">the instructions</a> on how to do this. At least one device is needed for this plugin to work.</p>
+                <p class="large-12 clearfix"></p>
+                <pre>
+                    <code>
+&lt;script>
+    $('.prezento-holder').prezento({
+      devices: [{
+        name: 'imac',
+        deviceImageSRC: 'imac.png',
+        xLeftTop: 186,
+        yLeftTop: 111,
+        xRightBottom: 2106,
+        yRightBottom: 1261,
+        breakpoint: 1024,
+        bgImgSrc : 'your-web-design.jpg',
+        bgTransitionDuration: '8s'
+      },{
+        name: 'ipad',
+        deviceImageSRC: 'ipad.png',
+        xLeftTop: 112,
+        yLeftTop: 110,
+        xRightBottom: 890,
+        yRightBottom: 1144,
+        breakpoint: 480,
+        bgImgSrc : 'your-web-design-for-tablet.jpg',
+        bgTransitionDuration: '4s'
+      },{
+        name: 'iphone',
+        deviceImageSRC: 'iphone.png',
+        xLeftTop: 42,
+        yLeftTop: 135,
+        xRightBottom: 439,
+        yRightBottom: 829,
+        breakpoint: 0,
+        bgImgSrc : 'your-web-design-for-mobile.jpg',
+        bgTransitionDuration: '2s'
+      }], 
+      responsive: 'window'
+    });
+&lt;/script></code>
+                </pre>
+            </div>
+        </div>
+
+        <div class="row ptxxl pbxxl">
+            <div class="large-12 columns">
+                <h2>Options</h2>
+                <table>
+                    <tbody>
+                        <tr class="thead">
+                            <td>Name</td>
+                            <td colspan="3">Options</td>
+                        </tr>
+                        <tr>
+                            <td>devices[ ]</td>
+                            <td colspan="3">
+                                <table>
+                                    <thead>
+                                        <tr>
+                                            <th>Name</th>
+                                            <th>Type</th>
+                                            <th>Description</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td>name</td>
+                                            <td>string</td>
+                                            <td>Give a unique name to this device, usefull when you want to add controls to let the user change the device (see commands)</td>
+                                        </tr>
+                                        <tr>
+                                            <td>deviceImageSRC</td>
+                                            <td>string</td>
+                                            <td>Source of the image of the device</td>
+                                        </tr>
+                                        <tr>
+                                            <td>xLeftTop</td>
+                                            <td>int</td>
+                                            <td>X Coordinate of the left top position of the screen</td>
+                                        </tr>
+                                        <tr>
+                                            <td>yLeftTop</td>
+                                            <td>int</td>
+                                            <td>Y Coordinate of the left top position of the screen</td>
+                                        </tr>
+                                        <tr>
+                                            <td>xRightBottom</td>
+                                            <td>int</td>
+                                            <td>X Coordinate of the right bottom position of the screen</td>
+                                        </tr>
+                                        <tr>
+                                            <td>yRightBottom</td>
+                                            <td>int</td>
+                                            <td>Y Coordinate of the right bottom position of the screen</td>
+                                        </tr>
+                                        <tr>
+                                            <td>breakpoint</td>
+                                            <td>int</td>
+                                            <td>Screenwidth in pixels. Mobile first, so all screensizes bigger than given value will use this device.</td>
+                                        </tr>
+                                        <tr>
+                                            <td>bgImgSrc</td>
+                                            <td>string</td>
+                                            <td>Source of your webdesign you want to use with this device.</td>
+                                        </tr>
+                                        <tr>
+                                            <td>bgTransitionDuration</td>
+                                            <td>string</td>
+                                            <td>The duration of the animation in seconds.</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </td>
+
+                        </tr>
+                        <tr class="thead">
+                            <td>Name</td>
+                            <td>Type</td>
+                            <td>Default</td>
+                            <td>Description</td>
+                        </tr>
+                        <tr>
+                            <td>debug</td>
+                            <td>boolean</td>
+                            <td>false</td>
+                            <td>controls if you want to have some developer output in your console. (It shows the contents of all devices you added)</td>
+                        </tr>
+                        <tr>
+                            <td>deviceHolder</td>
+                            <td>string</td>
+                            <td>'deviceholder'</td>
+                            <td>classname of the device which will be used by the script. A new div will be created inside the showcase holder.</td>
+                        </tr>
+                        <tr>
+                            <td>deviceScreen</td>
+                            <td>string</td>
+                            <td>'devicescreen'</td>
+                            <td>classname of the devicescreen which will be used by the script. A new div will be created inside the showcase holder.</td>
+                        </tr>
+                        <tr>
+                            <td>startAfterScroll</td>
+                            <td>boolean</td>
+                            <td>false</td>
+                            <td>If the scrolling of the screen should be triggered based on the position of the users viewport. Could be handy if you have a large page and your prezento is below the viewport onload.</td>
+                        </tr>
+                        <tr>
+                            <td>distanceTop</td>
+                            <td>float or string</td>
+                            <td>0.25 or '25%'</td>
+                            <td>If startAfterScroll is true, what should be the distance from the top of the browser to the div holder. Either a value between 0 - 1 or a percentage between 0% - 100%</td>
+                        </tr>
+                        <tr>
+                            <td>resetWhenBelow</td>
+                            <td>boolean</td>
+                            <td>false</td>
+                            <td>If the animation should reset itself when it is out of the viewport</td>
+                        </tr>
+                        <tr>
+                            <td>responsive</td>
+                            <td>string</td>
+                            <td>'window'</td>
+                            <td>If the resize event should be triggered, to show your responsive layout. Can be 'window' (breakpoints based on window size), 'parent' (breakpoints based on parent container size), or 'none' (no resize will happen).</td>
+                        </tr>
+                        <tr>
+                            <td>autoPlay</td>
+                            <td>boolean</td>
+                            <td>true</td>
+                            <td>If the animation should start directly after pageload.</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <div class="row ptxxl pbxxl">
+            <div class="large-12 columns">
+                <h2>Commands</h2>
+                <table>
+                    <thead class="thead">
+                        <tr>
+                            <th width="20%;">Command</th>
+                            <th width="30%;">Description</th>
+                            <th>Example Usage</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>play()</td>
+                            <td>start the animation</td>
+                            <td>
+                                <pre class="text-small">
+                                    <code>
+$('.prezento-holder').prezento.play();</code>
+                                </pre>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>pause()</td>
+                            <td>pause the animation</td>
+                            <td>
+                                <pre class="text-small">
+                                    <code>
+$('.prezento-holder').prezento.pause();</code>
+                                </pre>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>resume()</td>
+                            <td>resume the animation</td>
+                            <td>
+                                <pre class="text-small">
+                                    <code>
+$('.prezento-holder').prezento.resume();</code>
+                                </pre>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>reset()</td>
+                            <td>reset the animation</td>
+                            <td>
+                                <pre class="text-small">
+                                    <code>
+$('.prezento-holder').prezento.reset();</code>
+                                </pre>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>changeDevice(name)</td>
+                            <td>Change the device your design is presented on based on the name you have entered for the device</td>
+                            <td>
+                                <pre class="text-small">
+                                    <code>
+$('.prezento-holder').prezento.changeDevice('imac');</code>
+                                </pre>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table> 
+            </div>
+        </div>
+
+        <div class="row ptxxl pbxxl">
+            <div class="large-12 columns">
+                <h2 id="chap5">Browser Support</h2>
+                <table>
+                    <tbody>
+                        <tr>
+                            <td><img src="https://raw.github.com/alrra/browser-logos/master/chrome/chrome_48x48.png" alt="Chrome"/></td>
+                            <td><img src="https://raw.github.com/alrra/browser-logos/master/firefox/firefox_48x48.png" alt="Firefox"/></td>
+                            <td><img src="https://raw.github.com/alrra/browser-logos/master/safari/safari_48x48.png" alt="Safari"/></td>
+                            <td><img src="https://raw.github.com/alrra/browser-logos/master/opera/opera_48x48.png" alt="Opera"/></td>
+                            <td><img src="https://raw.github.com/alrra/browser-logos/master/internet-explorer-tile/internet-explorer-tile_48x48.png" alt="IE"/></td>
+                            <td><img src="https://raw.github.com/alrra/browser-logos/master/safari-ios/safari-ios_48x48.png" alt="iOS"/></td>
+                        </tr>
+                        <tr>
+                            <td>&#x2713;</td>
+                            <td>&#x2713; 5+</td>
+                            <td>&#x2713; 4+</td>
+                            <td>&#x2713; 12+</td>
+                            <td>&#x2713; 10+</td>
+                            <td>&#x2713;</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <div class="row ptxxl pbxxl">
+            <div class="large-12 columns">
+                <h2 id="chap6">Copyright and License</h2>
+                <p>Copyright &copy; <?php echo date("Y"); ?> Ivaldi (<a href="http://ivaldi.nl">http://ivaldi.nl</a>)<br/>Prezento is licensed under the GNU Affero General Public License Version 3.</p>
+            </div>
+        </div>
+    </div>
+
+    <footer class="bg-black group pts pbs">
+        <div class="row no-overflow">
+            <ul class="mobile-four text-small">
+                <li class="mrm"><a href="http://ivaldi.nl" class="logo-show">Ivaldi</a></li>
+                <li class="text-strong white mrxl">© 2013 Ivaldi V.O.F.</li>
+                <li class="mrxl"><a href="http://ivaldi.nl/contact/" class="light-grey text-nodecoration text-strong">Overschieseweg 10e, Rotterdam</a></li>
+                <li class="mrxl"><a href="tel:0107009709" class="light-grey text-nodecoration text-strong">010 7009 709</a></li>
+                <li class="mrxl">
+                    <script type="text/javascript">
+                        //<![CDATA[
+                        <!--
+                        var x="function f(x){var i,o=\"\",l=x.length;for(i=0;i<l;i+=2) {if(i+1<l)o+=" +
+                        "x.charAt(i+1);try{o+=x.charAt(i);}catch(e){}}return o;}f(\"ufcnitnof x({)av" +
+                        " r,i=o\\\"\\\"o,=l.xelgnhtl,o=;lhwli(e.xhcraoCedtAl(1/)3=!21)6t{yrx{=+;x+ll" +
+                        "=};acct(h)e}{f}roi(l=1-i;=>;0-i)-o{=+.xhcratAi(;)r}teru n.oussbrt0(o,)l};(f" +
+                        ")\\\"82\\\\,0\\\"03\\\\\\\\22\\\\02\\\\03\\\\\\\\\\\\t=\\\\| '3wv~6yreuQ{77" +
+                        "\\\\1i\\\\d`)2nVhfqt.wyvne\\\\\\\\2]02\\\\\\\\24\\\\03\\\\02\\\\\\\\\\\\r1\\"+
+                        "\\03\\\\\\\\05\\\\0K\\\\G@OE3qdin~a9dr9rzgyv,c1Qyxdh&dX'loi/32\\\\01\\\\02\\"+
+                        "\\\\\\35\\\\0r\\\\\\\\\\\\23\\\\09\\\\27\\\\01\\\\02\\\\\\\\30\\\\04\\\\03\\"+
+                        "\\\\\\4N03\\\\\\\\06\\\\05\\\\03\\\\\\\\31\\\\06\\\\01\\\\\\\\03\\\\0O\\\\V" +
+                        "014\\\\04\\\\01\\\\\\\\32\\\\07\\\\01\\\\\\\\4F00\\\\\\\\AX7J01\\\\\\\\14\\" +
+                        "\\0:\\\\4*,.-t26 ;<7\\\\6(\\\"}fo;n uret}r);+)y+^(i)t(eAodrCha.c(xdeCoarCho" +
+                        "mfrg.intr=So+7;12%=;y=iy+2)=8i=f({i+)i+l;i<0;i=r(foh;gten.l=x,l\\\"\\\\\\\"" +
+                        "\\\\o=i,r va){,y(x fontincfu)\\\"\")"                                        ;
+                        while(x=eval(x));
+                        //-->
+                        //]]>
+                    </script>
+                </li>
+                <li class="icon right"><a href="https://github.com/ivaldi" class="text-nodecoration text-strong"><span class="fa fa-2x fa-github-square light-grey heading-two mll"></span></a></li>
+                <li class="icon right"><a href="http://www.linkedin.com/company/829258" class="text-nodecoration text-strong"><span class="fa fa-2x fa-linkedin-square light-grey heading-two mll"></span></a></li>
+                <li class="icon right"><a href="https://www.facebook.com/ivaldiweb" class="text-nodecoration text-strong"><span class="fa fa-2x fa-facebook-square light-grey heading-two mll"></span></a></li>
+                <li class="icon right"><a href="http://twitter.com/ivaldi" class="text-nodecoration text-strong"><span class="fa fa-2x fa-twitter-square light-grey heading-two mll"></span></a></li>
+            </ul>
+        </div>
+    </footer>
+    <script src="javascripts/jquery.js"></script>
+    <script src="javascripts/foundation.min.js"></script>
+    <script src="javascripts/FeedEk.js"></script>
+    <script src="javascripts/jquery.prezento.js"></script>
+    <script src="javascripts/app.js"></script>
+  </body>
+</html>

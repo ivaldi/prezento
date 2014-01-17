@@ -38,8 +38,8 @@
         xRightBottom: 2106,
         yRightBottom: 1261,
         breakpoint: 1440,
-        bgImgSrc : './images/facet-site-huge.jpg',
-        bgTransitionDuration: '10s'
+        bgImgSrc : './images/web-design-huge.jpg',
+        bgTransitionDuration: '12s'
       },{
         name: 'macbookpro',
         deviceImageSRC: './images/mbp.png',
@@ -48,8 +48,8 @@
         xRightBottom: 876,
         yRightBottom: 505,
         breakpoint: 960,
-        bgImgSrc : './images/facet-site-large.jpg',
-        bgTransitionDuration: '13s'
+        bgImgSrc : './images/web-design-large.jpg',
+        bgTransitionDuration: '12s'
       },{
         name: 'ipad',
         deviceImageSRC: './images/ipad.png',
@@ -58,8 +58,8 @@
         xRightBottom: 890,
         yRightBottom: 1144,
         breakpoint: 480,
-        bgImgSrc : './images/facet-site-med.jpg',
-        bgTransitionDuration: '3s'
+        bgImgSrc : './images/web-design-med.jpg',
+        bgTransitionDuration: '15s'
       },{
         name: 'iphone',
         deviceImageSRC: './images/iphone.png',
@@ -68,8 +68,8 @@
         xRightBottom: 439,
         yRightBottom: 829,
         breakpoint: 0,
-        bgImgSrc : './images/facet-site-small.jpg',
-        bgTransitionDuration: '2s'
+        bgImgSrc : './images/web-design-small.jpg',
+        bgTransitionDuration: '4s'
       }], 
       startAfterScroll: true,
       resetWhenBelow: true,

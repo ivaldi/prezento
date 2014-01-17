@@ -197,4 +197,6 @@ table {
 .pserror{
 	margin: 0;
 	float: left;
+	position: relative;
+	z-index: 20;
 }

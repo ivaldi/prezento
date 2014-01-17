@@ -27,7 +27,8 @@
 			currentPlayState;
 
 		// Set value for distanceTop, depends if the user entered a float or string
-		config.distanceTop = typeof(config.distanceTop === 'string') ? parseFloat(config.distanceTop)/100 : config.distanceTop;
+
+		config.distanceTop = (typeof(config.distanceTop) === 'string') ? parseFloat(config.distanceTop)/100 : config.distanceTop;
 
 		// Create layout
 		parentElem
@@ -109,8 +110,8 @@
 		    if(motion === 'reset'){
 				$('.'+config.deviceScreen).css({
 					'background-position' : '0% 0%',
-			        'animation': 'none',
-			        'transition': 'none'
+					'animation': 'none',
+					'transition': 'none'
 			    });
 		    }
 		}
@@ -125,7 +126,7 @@
 
 		// Detect scrollposition and trigger animation based on distance top
 		function scrollScreen(){
-			if(!selectedDevice){
+			if(typeof selectedDevice === 'undefined'){
 				init();
 			}
 

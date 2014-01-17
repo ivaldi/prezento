@@ -47,7 +47,7 @@
         yLeftTop: 36,
         xRightBottom: 876,
         yRightBottom: 505,
-        breakpoint: 960,
+        breakpoint: 800,
         bgImgSrc : './images/web-design-large.jpg',
         bgTransitionDuration: '12s'
       },{

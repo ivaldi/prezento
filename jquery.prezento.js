@@ -27,7 +27,6 @@
 			currentPlayState;
 
 		// Set value for distanceTop, depends if the user entered a float or string
-
 		config.distanceTop = (typeof(config.distanceTop) === 'string') ? parseFloat(config.distanceTop)/100 : config.distanceTop;
 
 		// Create layout
@@ -178,34 +177,37 @@
 
 			$(deviceHolder).html($(dummyImage).clone());
 
-		    var deviceWidth = $(deviceHolder).find('img').width(),
-		    	deviceHeight = $(deviceHolder).find('img').height(),
-	    		screenWidth = device.xRightBottom - device.xLeftTop,
-	    		screenHeight = device.yRightBottom - device.yLeftTop,
-	    		wRatio = screenWidth / imageWidth,
-	    		hRatio = screenHeight / imageHeight,
-	    		lRatio = device.xLeftTop / imageWidth,
-	    		tRatio = device.yLeftTop / imageHeight;
 
-		    // Add some basic styling
-		    $(deviceHolder).css({
-		    	'position' : 'relative',
-		    	'z-index' : 3
-		    });
+			$(deviceHolder).find('img').load(function(){
+			    var deviceWidth = $(this).width(),
+			    	deviceHeight = $(this).height(),
+		    		screenWidth = device.xRightBottom - device.xLeftTop,
+		    		screenHeight = device.yRightBottom - device.yLeftTop,
+		    		wRatio = screenWidth / imageWidth,
+		    		hRatio = screenHeight / imageHeight,
+		    		lRatio = device.xLeftTop / imageWidth,
+		    		tRatio = device.yLeftTop / imageHeight;
 
-		    $(deviceScreen).css({
-		    	'position' : 'absolute',
-		    	'z-index' : 2,
-		        'width' : Math.ceil(deviceWidth * wRatio),
-		        'height': Math.ceil(deviceHeight * hRatio),
-		        'left' : Math.round(deviceWidth * lRatio),
-		        'top' : Math.round(deviceHeight * tRatio),
-		        'background-size' : '100%',
-		        'background-image' : 'url('+device.bgImgSrc+')',
-		        'background-position' : '0% 0%'
-			});
+			    // Add some basic styling
+			    $(deviceHolder).css({
+			    	'position' : 'relative',
+			    	'z-index' : 3
+			    });
 
+			    $(deviceScreen).css({
+			    	'position' : 'absolute',
+			    	'z-index' : 2,
+			        'width' : Math.ceil(deviceWidth * wRatio),
+			        'height': Math.ceil(deviceHeight * hRatio),
+			        'left' : Math.round(deviceWidth * lRatio),
+			        'top' : Math.round(deviceHeight * tRatio),
+			        'background-size' : '100%',
+			        'background-image' : 'url('+device.bgImgSrc+')',
+			        'background-position' : '0% 0%'
+				});
 		    
+		    });
+			    
 		    // Extra options based on config
 		    if(!config.startAfterScroll && config.autoPlay){
 		    	animAction(selectedDevice, 'play');

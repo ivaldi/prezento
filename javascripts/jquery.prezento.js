@@ -197,10 +197,11 @@
 			    $(deviceScreen).css({
 			    	'position' : 'absolute',
 			    	'z-index' : 2,
-			        'width' : Math.ceil(deviceWidth * wRatio),
-			        'height': Math.ceil(deviceHeight * hRatio),
-			        'left' : Math.round(deviceWidth * lRatio),
-			        'top' : Math.round(deviceHeight * tRatio),
+			        'width' : deviceWidth * wRatio,
+			        'height': deviceHeight * hRatio,
+			        'left' : '50%',
+			        'top' : deviceHeight * tRatio,
+			        'margin-left' : '-' + (deviceWidth * wRatio / 2) + 'px',
 			        'background-size' : '100%',
 			        'background-image' : 'url('+device.bgImgSrc+')',
 			        'background-position' : '0% 0%'

@@ -93,6 +93,9 @@ table {
 
 .fa-spinner{
 	color: #6f6f6f;
+	position: absolute;
+	margin-top: -40px;
+	top: 50%;
 }
 
 .feedEkList{

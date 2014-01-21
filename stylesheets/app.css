@@ -233,6 +233,10 @@ table {
 	z-index: 20;
 }
 
+.prezento-holder{
+	min-height: 200px;
+}
+
 @media only screen and (max-width: 40.063em){
 	table{
 		display: block;

@@ -35,14 +35,9 @@
 			.append('<div class="'+config.deviceHolder+'"></div>')
 			.append('<div class="'+config.deviceScreen+'"></div>');
 
-		// Show loading icon while rest of the page is loaded
-		function beforeInit(){
-			parentElem.append('<i class="fa fa-5x fa-spinner fa-spin"></i>');
-		}
 
 		// Initialization logic
 		function init(){
-			parentElem.find('.fa-spinner').remove();
 			sortDevice();
 			setBreakpoints(config.devices.length);
 		}
@@ -225,7 +220,6 @@
 			if(config.responsive === 'window' || config.responsive === 'parent'){
 				$(window).on("resize", init);
 			}
-			$(document).on("ready", beforeInit);
 			$(window).on("load", init);
 		}else{
 			parentElem.append('<p class="pserror">You haven\'t defined any devices. Please read <a href="https://github.com/ivaldi/prezento/blob/master/README.md">the instructions</a> on how to do this. At least one device is needed for this plugin to work.</p>')

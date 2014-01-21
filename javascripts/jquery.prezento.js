@@ -42,7 +42,6 @@
 
 		// Initialization logic
 		function init(){
-			parentElem.find('.fa-spinner').remove();
 			sortDevice();
 			setBreakpoints(config.devices.length);
 		}
@@ -179,6 +178,7 @@
 
 
 			$(deviceHolder).find('img').load(function(){
+				parentElem.find('.fa-spinner').remove();
 			    var deviceWidth = $(this).width(),
 			    	deviceHeight = $(this).height(),
 		    		screenWidth = device.xRightBottom - device.xLeftTop,
